@@ -1,0 +1,36 @@
+nav[class^="alert"] a[class^="btn"] {
+  text-decoration: none;
+  margin-right: 15px;
+  
+}
+
+.buscar {
+  float: left;
+  width: 70%;
+  margin-right: 10px;
+  height: 38px;
+}
+
+.imagenUsuario {
+  border-radius: 30%;
+  width: 30px;
+}
+
+.comentarioComent {
+  color: rgb(128, 33, 120);
+  margin-left: 43px;
+}
+
+.adminProductos [class^="btn"] {
+  margin-right: 15px;
+  
+}
+
+.nuevoComentario {
+  height: 270px;
+  border: 1.5px solid rgb(68, 37, 141);
+}
+
+.nuevoComentario h2 {
+  text-align: center;
+}

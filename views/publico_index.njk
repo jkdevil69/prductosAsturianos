@@ -1,0 +1,26 @@
+{% extends "publico_base.njk" %}
+{% block titulo %}Buscar Producto{% endblock %}
+{% block contenido %}
+    <form action="/buscar" method="get">
+        <input type="text" class="buscar" name="buscar" placeholder="Buscador de productos...">
+        <button type="submit" class="btn btn-success">Buscar</button>
+    </form>
+    <br>
+
+    {% if error %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+    {% else %}
+        <ul width="100%">
+            {% for producto in productos %}
+                <li>
+                    <a href="/producto/{{producto.id}}">{{ producto.nombre }}</a>
+                    <img class="img-thumbnail" src="/public/uploads/{{producto.imagen}}" 
+                    alt="Imagen del producto." style="max-width:100px;">
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

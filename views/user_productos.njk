@@ -1,0 +1,29 @@
+{% extends "user_base.njk" %}
+
+{% block titulo %}
+    Productos | Listado
+{% endblock %}
+
+{% block contenido %}
+
+
+    <h2>Listado de productos</h2>
+    <table class="userProductos" width="100%"> 
+        {% for producto in productos %}  
+            <tr style="background-color:lightpink;">
+                <td>{{producto.nombre}}</td>
+                <td>
+                    <img class="img-thumbnail" src="/public/uploads/{{producto.imagen}}" alt="Imagen del producto." style="max-width:100px;">
+                    <!--<a class="btn btn-warning" href="/admin/editar/{{ producto.id }}">Editar</a>
+                    <form style="display:inline" action="/admin/{{ producto.id }}" method="post">
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button type="submit" class="btn btn-danger">Borrar</button>
+                    </form>-->
+                    <a class="btn btn-success" href="/user/comentarios/{{producto.id}}">Ver comentarios</a>
+                </td>
+            </tr>
+            </h1>
+        {% endfor %}
+    </table>
+
+{% endblock %}
